@@ -4,7 +4,7 @@
 
 AgentSphere-AI is a production-ready Agentic Retrieval-Augmented Generation (RAG) chatbot that can answer questions from uploaded PDF documents and real-time web sources.
 
-The system intelligently routes user queries between document retrieval and web search using LangGraph agents. It combines semantic search and keyword search through Hybrid Retrieval (BM25 + Vector Search + RRF Fusion) for more accurate answers.
+The system intelligently routes user queries between document retrieval and web search using LangGraph agents. It combines semantic search and keyword search through Hybrid Retrieval (BM25 + Vector Search + RRF Fusion) for highly accurate responses.
 
 If the Gemini API becomes unavailable, the system automatically switches to Groq as a fallback LLM, ensuring uninterrupted responses.
 
@@ -12,9 +12,11 @@ If the Gemini API becomes unavailable, the system automatically switches to Groq
 
 ## 🌐 Live Demo
 
-**Live Application:** https://agentsphere-ai-p5gc.onrender.com/
+**Live Application:**
+https://agentsphere-ai-p5gc.onrender.com/
 
-**GitHub Repository:** https://github.com/Pankaj1275dotcom/AgentSphere-AI
+**GitHub Repository:**
+https://github.com/Pankaj1275dotcom/AgentSphere-AI
 
 ---
 
@@ -22,16 +24,18 @@ If the Gemini API becomes unavailable, the system automatically switches to Groq
 
 ### 📄 PDF Question Answering (RAG)
 
-* Upload PDF documents
-* Ask questions about uploaded content
-* Context-aware answers from documents
-* Source attribution included
+* Upload PDF documents through the sidebar.
+* Process PDFs into a vector database.
+* Ask questions directly from uploaded documents.
+* Context-aware answers from document content.
+* Source attribution included.
 
 ### 🌍 Real-Time Web Search
 
-* Searches the web for current information
-* Provides source links
-* Handles recent events and live information
+* Search the internet for current information.
+* Answer questions about recent events.
+* Automatically retrieves live information.
+* Displays source links for transparency.
 
 ### 🔍 Hybrid Retrieval
 
@@ -41,44 +45,62 @@ Combines:
 * Semantic Vector Search
 * Reciprocal Rank Fusion (RRF)
 
-This improves retrieval accuracy compared to traditional RAG systems.
+This significantly improves retrieval accuracy compared to traditional RAG systems.
 
 ### 🤖 Agentic Workflow
 
 Built using LangGraph agents that:
 
-* Analyze user intent
-* Decide whether to use RAG or Web Search
-* Route requests intelligently
+* Analyze user intent.
+* Decide whether to use:
+
+  * PDF Retrieval
+  * Web Search
+* Route requests automatically.
 
 ### 🔄 Dual LLM Support
 
-Primary Model:
+#### Primary LLM
 
 * Google Gemini
 
-Fallback Model:
+#### Fallback LLM
 
 * Groq
 
-If Gemini fails, the chatbot automatically switches to Groq without interrupting the user experience.
+If Gemini API fails or becomes unavailable, AgentSphere-AI automatically switches to Groq to ensure uninterrupted responses.
 
-### 🧠 Chat Memory
+### 💬 Chat Management
 
-* Maintains conversation context
-* Stores chat history
-* Supports multi-turn conversations
+* Create new chat sessions.
+* View previous conversations.
+* Delete chat history.
+* Multi-session support.
+* Context-aware memory.
+
+### 📂 Document Management
+
+* Upload PDFs.
+* Process uploaded PDFs.
+* Remove uploaded documents.
+* Manage multiple documents.
+
+### 🧠 Conversation Memory
+
+* Maintains context during conversations.
+* Supports multi-turn interactions.
+* Stores session history.
 
 ### 🎨 Modern UI
 
-* Built with Streamlit
-* Dark theme interface
-* Chat history management
-* PDF document manager
+* Built with Streamlit.
+* Dark-themed interface.
+* Sidebar-based navigation.
+* Document Manager.
+* Chat History Manager.
+* Source attribution for every answer.
 
 ---
-
-## 🏗️ System Architecture
 
 ## 🏗️ System Architecture
 
@@ -132,6 +154,7 @@ If Gemini fails, the chatbot automatically switches to Groq without interrupting
               │ + Sources        │
               └──────────────────┘
 ```
+
 ---
 
 ## 🛠️ Tech Stack
@@ -139,8 +162,8 @@ If Gemini fails, the chatbot automatically switches to Groq without interrupting
 | Category        | Technology                      |
 | --------------- | ------------------------------- |
 | Frontend        | Streamlit                       |
-| Orchestration   | LangGraph                       |
 | Framework       | LangChain                       |
+| Orchestration   | LangGraph                       |
 | Vector Database | ChromaDB                        |
 | Embeddings      | Google Generative AI Embeddings |
 | Retrieval       | BM25 + Semantic Search + RRF    |
@@ -204,7 +227,6 @@ AgentSphere-AI/
 
 ```bash
 git clone https://github.com/Pankaj1275dotcom/AgentSphere-AI.git
-
 cd AgentSphere-AI
 ```
 
@@ -220,7 +242,7 @@ Windows:
 venv\Scripts\activate
 ```
 
-Linux/Mac:
+Linux / Mac:
 
 ```bash
 source venv/bin/activate
@@ -240,7 +262,6 @@ Create a `.env` file:
 
 ```env
 GOOGLE_API_KEY=your_gemini_api_key
-
 GROQ_API_KEY=your_groq_api_key
 ```
 
@@ -274,35 +295,76 @@ streamlit run app.py --server.port $PORT --server.address 0.0.0.0
 
 ## 📸 Screenshots
 
-### PDF Question Answering
+### 🏠 Main Interface
 
-(Add Screenshot Here)
+<img width="1303" height="587" alt="Main Interface" src="YOUR_MAIN_INTERFACE_SCREENSHOT_LINK">
 
-### Web Search Answers
+Features shown:
 
-(Add Screenshot Here)
+* New Chat
+* Chat History
+* Document Manager
+* PDF Upload
+* PDF Processing
+* Query Input
+* Source Attribution
 
-### Hybrid Retrieval Workflow
+---
 
-(Add Screenshot Here)
+### 📄 PDF Question Answering
+
+<img width="1296" height="610" alt="PDF QA" src="https://github.com/user-attachments/assets/e9899a02-75f8-452f-87a1-c5af434b0a21" />
+
+The chatbot retrieves relevant chunks from uploaded PDF documents and generates context-aware answers using Hybrid Retrieval.
+
+---
+
+### 🌐 Real-Time Web Search
+
+<img width="1303" height="587" alt="Web Search" src="https://github.com/user-attachments/assets/258864cd-3f13-4617-a7f9-eb9aef09b435" />
+
+The system automatically detects web-related queries and fetches live information with source attribution.
 
 ---
 
 ## 🎯 Key Highlights
 
-* Agentic RAG Architecture
-* Hybrid Retrieval System
-* Real-Time Web Search
-* Gemini + Groq Fallback
-* Chat Memory Support
-* Source Attribution
-* Streamlit UI
-* ChromaDB Vector Storage
-* LangGraph Workflow
+✅ Agentic RAG Architecture
+
+✅ LangGraph-Based Query Routing
+
+✅ Hybrid Retrieval (BM25 + Semantic + RRF)
+
+✅ ChromaDB Vector Database
+
+✅ PDF Question Answering
+
+✅ Real-Time Web Search
+
+✅ Automatic Query Classification
+
+✅ Gemini + Groq Fallback Architecture
+
+✅ Chat History Management
+
+✅ New Chat Sessions
+
+✅ Chat Deletion Support
+
+✅ PDF Upload & PDF Removal
+
+✅ Source Attribution
+
+✅ Conversation Memory
+
+✅ Streamlit Production UI
+
+✅ Render Deployment Ready
 
 ---
 
 ## 👨‍💻 Author
 
-**Pankaj Kumar Saini**
+### Pankaj Kumar Saini
+
 
